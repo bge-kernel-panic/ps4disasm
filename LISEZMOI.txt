@@ -27,31 +27,20 @@ Table des matières
 1. Sommaire des changements les plus récents
 --------------------------------------------
 
-Version 2.0.0
+Version 3.0.0
 +++++++++++++
 
-Nous vous avons réservés un joli cadeau, les amis! La police
-8x16 des dialogues est maintenant proportionnelle.
+Cette nouvelle version a vu le jour entièrement grâce au travail
+acharné de Galletteuh, qui s'est démené pour vous offrir une version
+avec une traduction complète, incluant les techniques, les habiletés
+et les ennemis (hormis quelques intraduisibles). Il a aussi éliminé le
+non-usage de minuscules dans les menus. Ce n'était pas une mince
+affaire! BGE s'est contenté de tout passer dans l'assembleur et de
+suggérer quelques modifications très mineures.
 
-BGE a travaillé dur là-dessus, et le résultat est beaucoup
-plus joli. On se croirait presque dans un jeu moderne quand
-on joue en émulateur avec un filtre tel hq3x.
-
-Bon, et aussi plusieurs correctifs de ci, de là. Galletteuh
-et BGE ont tout deux travaillé pour améliorer certaines
-phrases un peu douteuses. Et évidemment il a fallu revoir
-tout le texte du jeux et revoir encore une fois pour s'assurer
-qu'on profitait bien de l'espace sur écran libéré par la
-nouvelle police.
-
-À noter que nous avons temporairement enlevé le code de gestion
-de dommages physiques. Même si Lory90 nous avait refilé un
-correctif pour le combat en véhicule, Wren ne prend que
-1 point de dommages lorsqu'il porte l'armure de Laconia. Bon,
-probablement qu'on pourrait arranger cela, mais on a pas voulu
-passer trop de temps là-dessus, surtout que le correctif est
-pour un problème dans le jeu original. Peut-être nous y
-reviendrons plus tard.
+Malheureusement BGE étant en plein NaNoWriMo, il lui a été impossible
+d'inclure les derniers correctifs de lory1990. Ça ira à une prochaine
+version.
 
 Comme d'habitude, vos sauvegardes SRAM devraient fonctionner.
 Les sauvegardes d'émulateur pourraient fonctionner, ou non.
@@ -67,6 +56,20 @@ Contenu du fichier zip:
 - LISEZMOI.txt - ce fichier
 - ps4fr.xdelta - patch format xdelta 3
 - ps4fr.ips    - patch format IPS
+- ps4fr_mus.xdelta
+  ps4fr_mus.ips - NOUVEAU - dans les patches originaux
+                  ci-dessus, la musique qui joue à
+		  l'intérieur de Nurvus (originellement
+		  "Behind the Circuit" a été remplacée
+		  par la musique du bio-labo. Si vous êtes
+		  un puriste et que cela ne vous plaît pas,
+		  utilisez l'une des deux patches suivantes
+		  après avoir appliqué la patch de base.
+		  Le .xdelta est à utilisé si vous avez
+		  utilisé ps4fr.xdelta, et le ips si vous
+		  avez utilisé le ps4fr.ips. Ne confondez
+		  pas les deux versions, car vous aurez
+		  des ennuis!
 
 TRÈS IMPORTANT: Quelle que soit la version que vous
 optez d'appliquer, le patch doit être appliqué sur la 
@@ -136,12 +139,13 @@ quantité de correctifs maintenus par lory1990 et BGE, dont:
 En revanche, le patch .IPS, en plus d'être de plus grande
 taille, a dû être sévèrement diminué pour demeurer en deçà
 de 20% de la taille du ROM original. Cela est dû aux limites
-du format .IPS. Le IPS "pèse" alors 400 Ko. Ce n'est pas si
+du format .IPS. Le IPS "pèse" alors 447 Ko. Ce n'est pas si
 mal si l'on considère que le texte, compressé, "pèse" un peu
 moins de 200 Ko, et il faut aussi compter les graphiques
-modifiés, le texte des menus (non compressé), et le fait qu'on
-a dû déplacer certains objets, ce qui a un impact sur nombre
-d'endroits dans le code original.
+modifiés, le texte des menus (non compressé), les traductions
+de chaînes diverses, et le fait qu'on a dû déplacer certains
+objets, ce qui a un impact sur nombre d'endroits dans le code
+original.
 
 Par contre, il a fallu sacrifier les correctifs qui ajoutaient
 trop de code. Il ne reste que les correctifs suivants:
@@ -185,6 +189,37 @@ des correctifs appliqués et ça ne râlait pas trop :)
 
 4. Sommaire des changements des versions précédentes
 ----------------------------------------------------
+
+Version 2.0.0
++++++++++++++
+
+Nous vous avons réservés un joli cadeau, les amis! La police
+8x16 des dialogues est maintenant proportionnelle.
+
+BGE a travaillé dur là-dessus, et le résultat est beaucoup
+plus joli. On se croirait presque dans un jeu moderne quand
+on joue en émulateur avec un filtre tel hq3x.
+
+Bon, et aussi plusieurs correctifs de ci, de là. Galletteuh
+et BGE ont tout deux travaillé pour améliorer certaines
+phrases un peu douteuses. Et évidemment il a fallu revoir
+tout le texte du jeux et revoir encore une fois pour s'assurer
+qu'on profitait bien de l'espace sur écran libéré par la
+nouvelle police.
+
+À noter que nous avons temporairement enlevé le code de gestion
+de dommages physiques. Même si lory1990 nous avait refilé un
+correctif pour le combat en véhicule, Wren ne prend que
+1 point de dommages lorsqu'il porte l'armure de Laconia. Bon,
+probablement qu'on pourrait arranger cela, mais on a pas voulu
+passer trop de temps là-dessus, surtout que le correctif est
+pour un problème dans le jeu original. Peut-être nous y
+reviendrons plus tard.
+
+Comme d'habitude, vos sauvegardes SRAM devraient fonctionner.
+Les sauvegardes d'émulateur pourraient fonctionner, ou non.
+Il y a plus de chance qu'elles fonctionnent si elles ont
+été faite en plein combat.
 
 Version 1.1.0
 +++++++++++++
@@ -293,10 +328,11 @@ BGE        : Traduction initiale, hackeur, police
              proportionnelle.
 (B.Goudreault-Emond)
 
-galletteuh : Nombreuses corrections au texte, beta-testeur,
-(A.Gallet)   hacking pour trouver la cause de certains
-             problèmes, modifications à la police pour
-	     la rendre plus jolie.
+galletteuh : Traduction des noms de monstres et des
+(A.Gallet)   compétences. Nombreuses corrections au texte,
+	     beta-testeur, hacking pour trouver la cause de
+	     certains problèmes, modifications à la police
+	     pour la rendre plus jolie.
 
 
 6. Contacts
