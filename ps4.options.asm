@@ -41,6 +41,7 @@ bugfix_missing_terminator = 1
 var_width_font_minimize_size = 0
 bugfix_frame_bugs = 1
 bugfix_directional_collision = 0 ; should be 1
+bugfix_update_stats_elements = 0	
 	
 	elseif essential_bugfixes = 1
 
@@ -68,7 +69,8 @@ bugfix_posibolt = 1
 bugfix_vision_skill = 1
 bugfix_missing_terminator = 1
 bugfix_frame_bugs = 0
-bugfix_directional_collision = 0	
+bugfix_directional_collision = 0
+bugfix_update_stats_elements = 0	
 
 	else
 
@@ -97,6 +99,8 @@ bugfix_vision_skill = 0
 bugfix_missing_terminator = 0	
 bugfix_frame_bugs = 0
 bugfix_directional_collision = 0
+bugfix_update_stats_eleemnts = 0
+	
 	endif
 
 	if (var_width_fonts = 1) && (bugfixes = 0) && (optional_fixes = 0)
