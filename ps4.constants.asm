@@ -32,6 +32,7 @@ dfs_pow = $28			; word
 dfs_pow_battle = $2A	; word
 magic_dfs = $2C			; word
 magic_dfs_battle = $2E	; word
+element_props = $30
 physical_prop = $30		; word
 energy_prop = $32		; word
 fire_prop = $34			; word
@@ -1996,6 +1997,7 @@ Current_Target_Index = ramaddr($FFFF4144)	; word
 Current_Command = ramaddr($FFFF4146)
 Fighters_Hit_Flags = ramaddr($FFFF4150)	; $00 = normal attack; $01 = critical hit; $FF = not being targeted or miss
 Battle_Item_List = ramaddr($FFFF4152)
+Battle_Heal_Damage_List = ramaddr($FFFF415A)	; Heal/Damage value for each fighter
 Battle_Ability_Effects = ramaddr($FFFF4170) ; if 0 the effect for a skill, technique, etc doesn't work; other numbers are the effects
 Battle_Ability_Range = ramaddr($FFFF4182)	; range (e.g. single target) of techniques and skills
 Battle_Skill_Done_Flag = ramaddr($FFFF4188)	; byte ; set to true when battle objects for skills have finished processing
@@ -2121,6 +2123,9 @@ Map_Start_Char_Align = ramaddr($FFFFEC46)	; alignment of the characters relative
 Map_Start_X_Pos = ramaddr($FFFFEC48)
 Map_Start_Y_Pos = ramaddr($FFFFEC4A)
 Field_Input_Buffer = ramaddr($FFFFEC4C)			; byte
+Map_Load_Flags = ramaddr($FFFFEC4E)	; bitfield ; bit 0 = object reload (generally between battles); bit 1 = render characters at saved coordinates upon loading the game;
+											   ; bit 2 = object reload (used during cutscenes); bit 3 = keep objects (used for map refresh during events)
+											   ; bit 7 = skip palette fade in
 BG_Alternate_Color_Flag = ramaddr($FFFFEC4F)	; byte; if set, for Plane B use the first palette line; also render tiles at lower priority
 												; when loading the Chunk table, all patterns are set to use the second palette line by default for Plane A
 Camera_X_Step_Counter_FG = ramaddr($FFFFEC50)
@@ -2170,6 +2175,8 @@ Tile_Collision_Top_Left_2 = ramaddr($FFFFEC8C)
 Tile_Collision_Up_2 = ramaddr($FFFFEC8D)
 Tile_Collision_Top_Right_2 = ramaddr($FFFFEC8E)
 
+Map_General_Var = ramaddr($FFFFEC8F)
+
 Window_Index = ramaddr($FFFFEC90)
 Saved_Window_Index = ramaddr($FFFFEC92)
 Win_Group_Start_Addr = ramaddr($FFFFEC94)
@@ -2207,6 +2214,8 @@ Saved_Sound_Index = ramaddr($FFFFECEC)
 
 Battle_Type = ramaddr($FFFFECEE)	; 0 = Profound Darkness battle; 1 = event (or boss) battle; 2 = random battle
 Mota_Battle_BG_Index = ramaddr($FFFFECEF)	; Motavia (outside) has different backgrounds depending on the tile you're standing on
+Char_Move_Flags = ramaddr($FFFFECFE)	; bitfield ; bit 0 = follow lead character; bit 1 = update movement order (X first, Y second or viceversa)
+												   ; bit 2 = lock camera
 
 	if dialogue_uncompressed = 1
 Saved_Dialogue_Addr = ramaddr($FFFFED64)	; dword if dlg uncompressed since we must point at correct ROM address AND there's more than 64 kb of dialogue... Note that this is used by a macro so this is mostly for documenting
@@ -2217,9 +2226,26 @@ Map_Dialogue_Trees_Addr = ramaddr($FFFFECF8)
 
 Event_Battle_Index = ramaddr($FFFFECFC)
 
+Render_Sprites_In_Cutscenes = ramaddr($FFFFECFD)	; byte ; 0 = render sprites in cutscenes; 1 = don't render sprites in cutscenes
+
+; Manga panel illustrations
 Panel_Index = ramaddr($FFFFED00)
 Panel_Num = ramaddr($FFFFED02)
+Panel_Tile_Backup_Curr = ramaddr($FFFFED04)
 Panel_Data = ramaddr($FFFFED10)
+Panel_VRAM_Destination = ramaddr($FFFFED10)
+Panel_Art_Addr = ramaddr($FFFFED12)
+Panel_Row_Size = ramaddr($FFFFED16)
+Panel_Col_Size = ramaddr($FFFFED17)
+Panel_X_Pos = ramaddr($FFFFED18)
+Panel_Y_Pos = ramaddr($FFFFED19)
+Panel_Art_Tile_1 = ramaddr($FFFFED1A)
+Panel_Palette_Addr_1 = ramaddr($FFFFED1C)
+Panel_Pattern_Addr_1 = ramaddr($FFFFED20)
+Panel_Art_Tile_2 = ramaddr($FFFFED24)
+Panel_Palette_Addr_2 = ramaddr($FFFFED26)
+Panel_Pattern_Addr_2 = ramaddr($FFFFED2A)
+Panel_Tile_Backup_List = ramaddr($FFFFED30)
 
 Town_Teleport_Flag = ramaddr($FFFFED50)	; if 0, you can use Ryuka and Telepipe
 Dungeon_Teleport_Index = ramaddr($FFFFED51)	; index which determines the coordinates you get teleported at (through Escapipe or Hinas) for every dungeon; if 0, teleport doesn't work
