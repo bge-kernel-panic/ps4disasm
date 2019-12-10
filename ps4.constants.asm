@@ -2143,6 +2143,7 @@ Map_Start_Char_Align = ramaddr($FFFFEC46)	; alignment of the characters relative
 Map_Start_X_Pos = ramaddr($FFFFEC48)
 Map_Start_Y_Pos = ramaddr($FFFFEC4A)
 Field_Input_Buffer = ramaddr($FFFFEC4C)			; byte
+Map_Load_Flags = ramaddr($FFFFEC4E)			; word
 BG_Alternate_Color_Flag = ramaddr($FFFFEC4F)	; byte; if set, for Plane B use the first palette line; also render tiles at lower priority
 												; when loading the Chunk table, all patterns are set to use the second palette line by default for Plane A
 Camera_X_Step_Counter_FG = ramaddr($FFFFEC50)
