@@ -1,0 +1,9 @@
+OutputTitleText -> RunText2
+$FFFFEC4E -> Map_Load_Flags
+RunDialogueText -> RunText
+DestroyWindow -> Window_Destroy
+Render_Dialogue -> RunText3
+loc_6A0A4 -> RunText_CharacterLoop
+loc_6A060 -> DecimalVRAMOffset1
+loc_6A070 -> DecimalVRAMOffset2
+loc_6A080 -> DecimalVRAMOffset3
