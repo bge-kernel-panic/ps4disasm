@@ -35,17 +35,17 @@ acharné de Galletteuh, qui s'est démené pour vous offrir une version
 avec une traduction complète, incluant les techniques, les habiletés
 et les ennemis (hormis quelques intraduisibles). Il a aussi éliminé le
 non-usage de minuscules dans les menus. Ce n'était pas une mince
-affaire! BGE s'est contenté de tout passer dans l'assembleur et de
-suggérer quelques modifications très mineures.
+affaire!
 
-Malheureusement BGE étant en plein NaNoWriMo, il lui a été impossible
-d'inclure les derniers correctifs de lory1990. Ça ira à une prochaine
-version.
+Malheureusement BGE étant en plein NaNoWriMo et a un peu tardé à rendre
+les changements publics. Il a par contre pris le temps de reprendre
+les derniers changements de lory1990. Ceux-ci ont été un peu ardus à
+mettre en commun, mais tout devrait être en ordre.
 
-Comme d'habitude, vos sauvegardes SRAM devraient fonctionner.
-Les sauvegardes d'émulateur pourraient fonctionner, ou non.
-Il y a plus de chance qu'elles fonctionnent si elles ont
-été faite en plein combat.
+Comme d'habitude, vos sauvegardes SRAM devraient fonctionner.  Les
+sauvegardes d'émulateur pourraient fonctionner, ou non.  Il y a plus
+de chance qu'elles fonctionnent si elles ont été faite en plein
+combat.
 
 
 2. Comment appliquer le patch
