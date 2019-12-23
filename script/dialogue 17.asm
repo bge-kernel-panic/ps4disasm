@@ -682,7 +682,7 @@
 ; $38
 	dc.b	$F4
 	dc.b	$01
-	dc.b    "Où allons nous aujourd'hui ?"
+	dc.b    "Où allons-nous aujourd'hui ?"
 	dc.b	$FD
 	dc.b	$F4
 	dc.b	$02

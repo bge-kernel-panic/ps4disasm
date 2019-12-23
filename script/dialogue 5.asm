@@ -141,7 +141,7 @@
 	dc.b	$FF
 
 ; $D
-	dc.b	"L'autre jour, à l'ouest, on pouvait"
+	dc.b	"L'autre jour, à l'ouest, on pouvait voirj"
 	dc.b	$FC
 	dc.b	"des tonnes de fumée !"
 	dc.b	$FD
@@ -212,7 +212,7 @@
 	dc.b	$FD
 	dc.b	$F4
 	dc.b	$0C
-	dc.b	"C'est un travail rude, n'est-ce pas ?"
+	dc.b	"C'est un rude travail, n'est-ce pas ?"
 	dc.b	$FD
 	dc.b	"Merci de prendre soin de Hahn."
 	dc.b	$F7
@@ -239,7 +239,7 @@
 
 	dc.b	$F4
 	dc.b	$02
-	dc.b	"... Hum, vous deux... !"
+	dc.b	"... Bon, ça suffit, vous deux... !"
 	dc.b	$FF
 
 ; $F
@@ -491,7 +491,7 @@
 	dc.b	$03
 	dc.b	"Je sais ça, m'man... Mais ma décision"
 	dc.b	$FC
-	dc.b	"est finale !"
+	dc.b	"est sans appel !"
 	dc.b	$FF
 
 ; $26

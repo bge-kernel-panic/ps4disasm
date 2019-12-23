@@ -42,7 +42,7 @@
 	dc.w	$0012
 	dc.b	$F4
 	dc.b	$04
-	dc.b	"Est-ce que Petit ici est ton companion"
+	dc.b	"Est-ce que Petit ici est ton compagnon"
 	dc.b	$FC
 	dc.b	"actuel ?"
 	dc.b	$FD
