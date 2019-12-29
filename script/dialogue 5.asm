@@ -141,7 +141,7 @@
 	dc.b	$FF
 
 ; $D
-	dc.b	"L'autre jour, à l'ouest, on pouvait voirj"
+	dc.b	"L'autre jour, à l'ouest, on pouvait voir"
 	dc.b	$FC
 	dc.b	"des tonnes de fumée !"
 	dc.b	$FD
